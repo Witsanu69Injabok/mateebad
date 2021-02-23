@@ -3,11 +3,11 @@
 
 
         function Login () {
-            $email = $_POST["email"];
+            $email = $_POST["user_name"];
             // $pwd = md5($_POST["password_hash"]);
-            $pwd =  ($_POST["password_hash"]);
-            $sql = " SELECT * FROM cnf_user WHERE user_login = '$email' AND user_password = '$pwd'   ";
-             $sql .= " AND user_level <= 4 ";
+            $pwd =  ($_POST["user_password"]);
+            $sql = " SELECT * FROM tbl_users WHERE user_name = '$email' AND user_password = '$pwd'   ";
+          //  $sql .= " AND user_level <= 4 ";
                 echo "<pre> $sql </pre> ";
                 $res = $this->query($sql);
                 echo "<pre>  $res </pre> ";
@@ -17,12 +17,13 @@
                 foreach ($res as $key_res => $value_res) {
 
                         $_SESSION['user_id'] = $value_res->user_id;
-                        $_SESSION['user_level'] = $value_res->user_level;
+                        $_SESSION['user_level'] = $value_res->level_id;
                         $_SESSION['user_name'] = $value_res->user_name;
-                        // $_SESSION['user_img'] = $value_res->user_img;
+                        $_SESSION['user_fullname'] = $value_res->user_fullname;
+                        $_SESSION['user_img'] = $value_res->user_img;
                         $i++;
                     }
-echo "<pre> " . $value_res->username . "</pre> ";
+echo "<pre> " . $value_res->user_name . "</pre> ";
                 if ($i == 0) { $_SESSION['status_login']= '';}
                 else {
 

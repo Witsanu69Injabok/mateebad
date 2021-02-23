@@ -46,7 +46,7 @@
                     ในการแบ่งสาย หรือจัดประกบคู่นักกีฬา
                     
                     </p>
-                    <a id="single_1"  href="<?php echo BASE_URL ?>/register" class="main-button" >สมัครสมาชิก</a>
+                    <a id="single_1"  href="<?php echo BASE_URL ?>register" class="main-button" >สมัครสมาชิก</a>
 
  
 

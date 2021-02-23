@@ -1,8 +1,8 @@
 ﻿<?php
  
  
-$config['base_url'] = 'http://localhost/bad/app/';
-$config['base_path'] = 'http://localhost/bad/app/';
+$config['base_url'] = 'http://localhost/bad/Source/';
+$config['base_path'] = 'http://localhost/bad/Source/';
 $config['default_controller'] = 'main';
 $config['error_controller'] = 'notfound';
 
@@ -15,7 +15,7 @@ $config['show_error_level'] = '1';
 // 1 normal // 2 advance
 
 $config['db_host'] = 'localhost';
-$config['db_name'] = 'badmintion';
+$config['db_name'] = 'badminton';
 $config['db_username'] = 'root';
 $config['db_password'] = '123';
 $config['db_prefix'] = '';

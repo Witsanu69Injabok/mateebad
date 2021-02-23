@@ -25,9 +25,9 @@ class login extends Controller
     {
 
         $t = $this->loadView('login_view');
-        $t->set('title', $this->title);
-        $t->set('get', $this->db);
-        $t->set('thisis', $this);
+        // $t->set('title', $this->title);
+        // $t->set('get', $this->db);
+        // $t->set('thisis', $this);
         $t->render();
     }
 
@@ -63,15 +63,22 @@ class login extends Controller
 
     public function act()
     {
-
-
         $lgdata = $this->loadModel('login_model');
         $lgValue = $lgdata->login();
 
         $tp = $this->loadView('main_view');
         $tp->set('lgValue', $lgValue);
         if ($_SESSION['status_login'] == 'login') {
-            $this->redirect('dashboard');
+           // $this->redirect('dashboard');
+            if ($_SESSION['user_level'] == 1) {
+                $this->redirect('lvAdmin');
+            } else if ($_SESSION['user_level'] == 2) {
+                $this->redirect('lvUser');
+            } else if ($_SESSION['user_level'] == 3) {
+                $this->redirect('lvStaff');
+            }
+
+
         } else {
             $this->redirect('login/logout');
         }

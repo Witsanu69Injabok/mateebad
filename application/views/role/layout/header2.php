@@ -42,22 +42,22 @@ https://templatemo.com/tm-537-art-factory
 
 
 	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/fancybox/jquery.mousewheel.pack.js?v=3.1.3"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/fancybox/jquery.mousewheel.pack.js?v=3.1.3"></script>
 
 	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/fancybox//jquery.fancybox.pack.js?v=2.1.5"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>static/js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/fancybox//jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>static/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
 
 	<!-- Add Button helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>static/js/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/fancybox//helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>static/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/fancybox//helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 
 	<!-- Add Thumbnail helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>static/js/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/fancybox//helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>static/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/fancybox//helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
 	<!-- Add Media helper (this is optional) -->
-	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL; ?>static/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -246,9 +246,7 @@ https://templatemo.com/tm-537-art-factory
 		}
 	</style>
 
-
-
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <style>
     @import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap');
@@ -317,10 +315,10 @@ https://templatemo.com/tm-537-art-factory
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>main/index">หน้าแรก</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>main/index/#about">เกี่ยวกับเรา</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>main/index/#services">นักกีฬา</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>main/index/#frequently-question">ผู้จัด</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>">หน้าแรก</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#about">เกี่ยวกับเรา</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#services">นักกีฬา</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#frequently-question">ผู้จัด</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">ตารางการแข่งขัน</a>
                                 <ul>
@@ -331,6 +329,7 @@ https://templatemo.com/tm-537-art-factory
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="#contact-us">ติดต่อเรา</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL ?>/login">เข้าสู่ระบบ</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

@@ -7,7 +7,7 @@ class example extends Controller
         // $example = $this->loadModel('Example_model');
         // $something = $example->getSomething();
 
-        $template = $this->loadView('tp');
+        $template = $this->loadView('t_view');
         // $template->set('someval', $something);
         $template->render();
     }

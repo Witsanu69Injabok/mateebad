@@ -5,13 +5,12 @@
  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>   -->
  <script src="<?php echo BASE_URL; ?>static/js/jquery-1.11.1.min.js"></script>  
 <!-- jQuery -->
- 
             <?php 
-            if($page_view != 'login'){
-        					echo "<br>";
-        				}else{
-        					echo "<br><br><br>";
-                        }
+            // if($page_view != 'login'){
+        	// 				echo "<br>";
+        	// 			}else{
+        	// 				echo "<br>";
+            //             }
                         
                         ?>
             <?php
