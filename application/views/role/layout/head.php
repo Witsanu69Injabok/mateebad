@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NaNa Mart</title>
+    <title>Mateebad</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -475,7 +475,7 @@
                                 </li>
 
                                 <li class="nav-item" style="padding-left:10px;">
-                                    <a href="<?php echo BASE_URL; ?>admin/index/staffs" class="nav-link">
+                                    <a href="<?php echo BASE_URL; ?>admin/index/cards" class="nav-link">
                                         <i class="fas fa-file-import"></i>
                                         <p>ผู้จัด</p>
                                     </a>
@@ -569,7 +569,12 @@
                                     </a>
                                 </li>
 
-                               
+                                <li class="nav-item" style="padding-left:10px;">
+                                    <a href="<?php echo BASE_URL; ?>lvUser/profile" class="nav-link">
+                                        <i class="fas fa-file-import"></i>
+                                        <p>ประวัติ</p>
+                                    </a>
+                                </li>
                                 <li class="nav-item" style="padding-left:10px;">
                                     <a href="<?php echo BASE_URL; ?>admin/index/wh" class="nav-link">
                                         <i class="fas fa-file-import"></i>
