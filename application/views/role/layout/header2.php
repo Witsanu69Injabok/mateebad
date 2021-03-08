@@ -316,10 +316,10 @@ https://templatemo.com/tm-537-art-factory
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>">หน้าแรก</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#about">เกี่ยวกับเรา</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#services">นักกีฬา</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#frequently-question">ผู้จัด</a></li>
-                            <li class="submenu">
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#about">เกี่ยวกับระบบ</a></li>
+                            <!-- <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#services">รายการแข่งขัน</a></li> -->
+                            <li class="scroll-to-section"><a href="<?php echo BASE_URL; ?>#frequently-question">ปฎิทินการแข่งขัน</a></li>
+                            <!-- <li class="submenu">
                                 <a href="javascript:;">ตารางการแข่งขัน</a>
                                 <ul>
                                     <li><a href="">ทั้งหมด</a></li>
@@ -327,7 +327,7 @@ https://templatemo.com/tm-537-art-factory
                                     <li><a href="">บุรีรัมย์</a></li>
                                     <li><a href="">สุรินทร์</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="scroll-to-section"><a href="#contact-us">ติดต่อเรา</a></li>
                             <li class="scroll-to-section"><a href="<?php echo BASE_URL ?>/login">เข้าสู่ระบบ</a></li>
                         </ul>

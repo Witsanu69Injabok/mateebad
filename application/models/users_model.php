@@ -30,6 +30,15 @@ class users_model extends Model {
         $res = $this->execute($sql);
         return $res;
     }
+    function list($levelid){
+        if($levelid == "0"){
+            $sql = " SELECT * FROM tbl_users WHERE IsActive = 1 AND IsDelete = 0 ";
+        } else {
+            $sql = " SELECT * FROM tbl_users WHERE IsActive = 1 AND IsDelete = 0 AND level_id = $levelid ";
+        }
+        $res = $this->query($sql);
+        return $res;
+    } // end function
 
 
 

@@ -9,7 +9,7 @@ class Xcrud_config
 // $config['db_password'] = '123456';
 // $config['db_prefix'] = 'ng_';
 
-    public static $dbname =  'badmintion'; // Your database name
+    public static $dbname =  'badminton'; // Your database name
     public static $dbuser =   'root'; // Your database username
     public static $dbpass =   '123'; // // Your database password
     public static $dbhost = 'localhost'; // Your database host, 'localhost' is default.

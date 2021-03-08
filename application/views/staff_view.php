@@ -47,7 +47,8 @@ foreach ($dt as $key => $value) {
                     <div class="card-tools">
 
                         <ul class="pagination pagination-sm float-right">
-                            <li><a class="btn btn-success sm" href="#"><i class="fas fa-plus-circle"> </i>
+                            <li><a class="btn btn-success sm" href="<?php echo BASE_URL;?>games/addFrm"><i
+                                        class="fas fa-plus-circle"> </i>
                                     เพิ่มรายการแข่งขัน</a></li>
                             <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -58,83 +59,81 @@ foreach ($dt as $key => $value) {
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body p-0">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th style="width: 10px">#</th>
-                                <th>รายการแข่งขัน</th>
-                                <th>สถานะการชำระเงิน</th>
-                                <th>สถานะ</th>
 
-                                <th>จำนวนผู้สมัคร</th>
+                    <h3>รายการแข่งขัน</h3>
 
-                                <th style="width: 40px"> </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-foreach ($dv as $key => $value) {
+
+
+
+
+                    <div class="row container">
+                        <?php 
+foreach ($dv as $key => $value) { 
  
 
 ?>
-                            <tr>
-                                <td><?php echo $value->game_id; ?></td>
-                                <td><?php echo $value->game_name; ?></td>
 
-
-                                <td>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                            
+                                <a href="<?php echo BASE_URL ?>/games/detail/<?php echo $value->game_id; ?>/2" >
+                                    <img src="<?php echo BASE_URL ?>static/uploads/<?php echo $value->game_img; ?>" alt="Lights" style="width:100%">
+                                    <div class="caption">
+                                        <p> <?php echo $value->game_name ?> </p>
+                                    </div>
+                                    <div>
+                                    สถานะ
                                     <?php
+                                    if ($value->IsActive == 1){
+                                        echo "<span class='btn bg-success'> ใช้งาน </span> ";
+                                    } else {
+                                        echo "<span class='btn bg-danger'> รอ </span> ";
+                                    }
+                                ?>
                                     
-                                    if ($value->pay_status == 1){
-                                        echo "";
-?>
-                                    <span class='btn bg-success'> ชำระแล้ว </span>
-
-                                    <?php 
-
-                                    } else {
-                                        //echo "<span class='btn bg-danger'> ยังไม่ชำระ </span> ";
-                                        ?>
-                                    <!-- <span class=class='btn bg-danger'> ยังไม่ชำระ </span> -->
-                                    <a href='<?php echo BASE_URL; ?>uploads/sliptFrm/<?php echo $value->game_id; ?>'  id='pop6060' class='btn btn-warning'>แจ้งชำระเงิน</a>
-                                    <?php 
-
-
-                                    }
-                                ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    if ($value->game_status == 1){
-                                        echo "<span class='btn bg-success'> เปิดการแข่งขัน </span> ";
-                                    } else {
-                                        echo "<span class='btn bg-danger'> ปิดการแข่งขัน </span> ";
-                                    }
-                                ?>
-
-                                </td>
-                                <td>99999</td>
-                                <td> <a class=" btn bg-info sm"><i class="fas fa-info-circle"> รายละเอียด </i></a> </td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                         
+                        
+                    
+                    <?php } ?>
                 </div>
-                <!-- /.card-body -->
+
+
+
+                <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
             </div>
-            <!-- /.card -->
-
-
-            <!-- /.card -->
+            <!-- /.card-body -->
         </div>
+        <!-- /.card -->
+
+
+        <!-- /.card -->
+</div>
 
 
 
 
-    </section>
+</section>
 
 
 
-    <!-- -------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------- -->
 
-    <?php $this->loadLayout("role/layout/footer"); ?>
+<?php $this->loadLayout("role/layout/footer"); ?>

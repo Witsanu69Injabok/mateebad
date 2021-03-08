@@ -1,5 +1,12 @@
 <?php $this->loadLayout("role/layout/header2");  ?>
 
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- fullCalendar -->
+<link rel="stylesheet" href="<?php echo BASE_URL ?>static/plugins/fullcalendar/main.css">
+<link rel="stylesheet" href="<?php echo BASE_URL ?>static/plugins/fullcalendar-daygrid/main.min.css">
+<link rel="stylesheet" href="<?php echo BASE_URL ?>static/plugins/fullcalendar-timegrid/main.min.css">
+<link rel="stylesheet" href="<?php echo BASE_URL ?>static/plugins/fullcalendar-bootstrap/main.min.css">
 
 <!-- ***** Welcome Area Start ***** -->
 <div class="welcome-area" id="welcome">
@@ -11,6 +18,10 @@
                 <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <h1>มาตีแบด </h1>
+                    <div>
+                        ใส่คำโปรย / โฆษณา / สโลแกนตรงนี้
+                    </div>
+                    <p></p>
                     <a href="##contact-us" class="main-button-slider">Contact Us</a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
@@ -39,16 +50,18 @@
                     <h5>ระบบสมาชิก นักกีฬา และผู้จัดการแข่งขัน</h5>
                 </div>
                 <div class="left-text">
-                    <p>นักกีฬาสามารถสมัครสมาชิกเพียงครั้งเดียว สามารถเข้าร่วมการแข่งขันได้ทุกรายการที่มีการจัดแข่ง และสามารถดูสถิติการแข่งขันของตนเอง
-                    ได้อีกด้วย</p>
+                    <p>นักกีฬาสามารถสมัครสมาชิกเพียงครั้งเดียว สามารถเข้าร่วมการแข่งขันได้ทุกรายการที่มีการจัดแข่ง
+                        และสามารถดูสถิติการแข่งขันของตนเอง
+                        ได้อีกด้วย</p>
                     <p>
-                    ผู้จัดสามารถคัดเลือกนักกีฬา ที่เข้าแข่งขันโดย สามารถ ดูประวัติการแข่งขัน ผลการแข่งขันของนักกีฬาในแต่ละรายการเพื่อประกอบการตัดสินใจ 
-                    ในการแบ่งสาย หรือจัดประกบคู่นักกีฬา
-                    
-                    </p>
-                    <a id="single_1"  href="<?php echo BASE_URL ?>register" class="main-button" >สมัครสมาชิก</a>
+                        ผู้จัดสามารถคัดเลือกนักกีฬา ที่เข้าแข่งขันโดย สามารถ ดูประวัติการแข่งขัน
+                        ผลการแข่งขันของนักกีฬาในแต่ละรายการเพื่อประกอบการตัดสินใจ
+                        ในการแบ่งสาย หรือจัดประกบคู่นักกีฬา
 
- 
+                    </p>
+                    <a id="single_1" href="<?php echo BASE_URL ?>register" class="main-button">สมัครสมาชิก</a>
+
+
 
 
 
@@ -71,21 +84,21 @@
         <div class="row">
             <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
                 <div class="left-heading">
-                    <h5>Curabitur aliquam eget tellus id porta</h5>
+                    <h5>ระบบจัดการแข่งขัน</h5>
                 </div>
-                <p>Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit. Aenean in feugiat purus.</p>
+                <p>คุณสมบัติโปรแกรมแกรม ใส่ตรงนี้</p>
                 <ul>
                     <li>
                         <img src="<?php echo BASE_URL; ?>static/images/about-icon-01.png" alt="">
                         <div class="text">
-                            <h6>Nulla ultricies risus quis risus</h6>
+                            <h6>คุณสมบัติ 1</h6>
                             <p>You can use this website template for commercial or non-commercial purposes.</p>
                         </div>
                     </li>
                     <li>
                         <img src="<?php echo BASE_URL; ?>static/images/about-icon-02.png" alt="">
                         <div class="text">
-                            <h6>Donec consequat commodo purus</h6>
+                            <h6>คุณสมบัติ 2</h6>
                             <p>You have no right to re-distribute this template as a downloadable ZIP file on any
                                 website.</p>
                         </div>
@@ -93,7 +106,7 @@
                     <li>
                         <img src="<?php echo BASE_URL; ?>static/images/about-icon-03.png" alt="">
                         <div class="text">
-                            <h6>Sed placerat sollicitudin mauris</h6>
+                            <h6>คุณสมบัติ 3</h6>
                             <p>If you have any question or comment, please <a rel="nofollow"
                                     href="https://templatemo.com/contact">contact</a> us on TemplateMo.</p>
                         </div>
@@ -112,22 +125,14 @@
 
 
 <!-- ***** Features Small Start ***** -->
-<section class="section" id="services">
+<!-- <section class="section" id="services">
     <div class="container">
 
+        <div class="left-heading">
+            <h3>รายการแข่งขัน</h3>
+        </div>
 
-        <a href="<?php echo BASE_URL; ?>register" class="fancybox-manual-b">
-            <h2>Regisger</h2>
 
-        </a>
-
-        <a class="fancybox-media" href="http://twitvid.com/QY7MD" rel="media-gallery">Twitvid</a>
-        <a class="fancybox-media" href="http://localhost/bad/web/test" rel="media-gallery">Register2</a>
-
-        <a href="<?php echo BASE_URL; ?>static/images/slider-icon.png" class="fancybox">
-            <h2>Warm <span>Oscar</span></h2>
-
-        </a>
 
         <div class="row">
             <div class="owl-carousel owl-theme">
@@ -197,7 +202,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Features Small End ***** -->
 
 
@@ -208,146 +213,176 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>ปฎิทินการแข่งขัน</h2>
                 </div>
             </div>
             <div class="offset-lg-3 col-lg-6">
                 <div class="section-heading">
-                    <p>Vivamus venenatis eu mi ac mattis. Maecenas ut elementum sapien. Nunc euismod risus ac lobortis
-                        congue. Sed erat quam.</p>
+                    <p>ปฎิทินการแข่งขันแบดมินตัน คลิกที่รายการที่สนใจได้เลย</p>
                 </div>
             </div>
         </div>
         <!-- ***** Section Title End ***** -->
 
+
+        <?php
+    foreach ($dv as $key => $rs) {
+        $json_data[]=array(  
+            "id"=>$rs->game_id,
+            "fullname"=> "9999999", // $rs->user_fullname,
+            "location"=>$rs->game_location,
+            "title"=>$rs->game_name,
+            "start"=>$rs->game_start ."T09:00:01",
+            "end"=>$rs->game_end ."T23:59:59",           
+            "color"=>$rs->color,           
+             "allDay"=>($rs->allDay==true)?true:false             
+                    
+                
+            // กำหนด event object property อื่นๆ ที่ต้องการ
+        );    
+    }
+    $json= json_encode($json_data);  
+    if(isset($_GET['callback']) && $_GET['callback']!=""){  
+         echo $_GET['callback']."(".$json.");";      
+        }else{  
+        //    echo $json;  
+        // $json_string = json_encode($json, JSON_PRETTY_PRINT);
+        //  echo "<pre> " . ( $json_string) . "</pre>";
+        }  
+?>
+
+
+
+
+        <div id='calendar'></div>
+        <input type="hidden" name="" class="form-control" value="<?php echo BASE_URL; ?>" id="pth">
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var pth = document.getElementById('pth').value;
+            var calendarEl = document.getElementById('calendar');
+            var initialLocaleCode = 'th';
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                //   initialDate: '2020-09-12',
+                events: <?php echo $json; ?>,
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                selectMirror: true,
+                displayEventTime: false,
+                nextDayThreshold: '00:00:01',
+
+
+                select: function(arg) {
+
+                    var title = prompt('Event Title:');
+                    if (title) {
+
+                        calendar.addEvent({
+                            id: arg.id,
+                            fullname: arg.fullname,
+                            location: arg.location,
+                            title: arg.title,
+                            start: arg.start,
+                            end: arg.end,
+                            color: arg.color,
+                            allDay: arg.allDay
+                        })
+                    }
+
+                    calendar.unselect()
+                },
+
+                editable: true,
+                dayMaxEvents: true, // allow "more" link when too many events
+                timezone: 'Asia/Bangkok',
+                locale: initialLocaleCode,
+                eventLimit: true,
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                eventClick: function(arg) {
+                    var p = "";
+                    if (arg.event.id) {
+                        $.fancybox({
+                            'href': pth + "games/popupdetail/" + arg.event.id + "/1",
+                            'type': 'iframe',
+                            //  other options as you like...
+                        });
+                        return false;
+                    }
+                }
+
+            });
+
+            calendar.render();
+        });
+        </script>
+
+
+
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="left-text col-lg-6 col-md-6 col-sm-12">
-                <h5>Class aptent taciti sociosqu ad litora torquent per conubia</h5>
-                <div class="accordion-text">
-                    <p>Curabitur placerat diam in risus lobortis, laoreet porttitor est elementum. Nulla ultricies risus
-                        quis risus scelerisque, a aliquam tellus maximus. Cras pretium nulla ac convallis iaculis.
-                        Aenean bibendum erat vitae odio sodales, in facilisis tellus volutpat.</p>
-                    <p>Sed lobortis pellentesque magna ac congue. Suspendisse quis molestie magna, id eleifend ex. Ut
-                        mollis ultricies diam nec dictum. Morbi commodo hendrerit mi vel vulputate. Proin non tincidunt
-                        dui. Lorem ipsum dolor sit amet.</p>
-                    <span>Email: <a href="#">email@company.com</a><br></span>
-                    <a href="#contact-us" class="main-button">Contact Us</a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="accordions is-first-expanded">
-                    <article class="accordion">
-                        <div class="accordion-head">
-                            <span>First Common Question</span>
-                            <span class="icon">
-                                <i class="icon fa fa-chevron-right"></i>
-                            </span>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="content">
-                                <p>Duis vulputate porttitor urna sit amet pretium. Phasellus sed pulvinar eros,
-                                    condimentum consequat ex. Suspendisse potenti.
-                                    <br><br>
-                                    Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros
-                                    rutrum sodales. Aliquam erat volutpat.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="accordion">
-                        <div class="accordion-head">
-                            <span>Second Question Answer</span>
-                            <span class="icon">
-                                <i class="icon fa fa-chevron-right"></i>
-                            </span>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="content">
-                                <p>Sed odio elit, cursus sed consequat at, rutrum eget augue. Cras ac eros iaculis,
-                                    tempor quam sit amet, scelerisque mi. Quisque eu risus eget nunc porttitor
-                                    vestibulum at a ante.
-                                    <br><br>
-                                    Praesent ut placerat turpis, vel pellentesque dolor. Sed rutrum eleifend tortor, eu
-                                    luctus orci sagittis in. In blandit fringilla mollis.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="accordion">
-                        <div class="accordion-head">
-                            <span>Third Answer for you</span>
-                            <span class="icon">
-                                <i class="icon fa fa-chevron-right"></i>
-                            </span>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="content">
-                                <p>Proin feugiat ante ut vulputate rutrum. Nam quis erat turpis. Nullam maximus pharetra
-                                    lorem, eu condimentum est iaculis ut. Pellentesque mattis ultrices dignissim.
-                                    <br><br>
-                                    Etiam et enim finibus, feugiat massa efficitur, finibus sapien. Sed cursus lacus
-                                    quis arcu scelerisque, eget ornare risus maximus. Aenean non lectus id odio rhoncus
-                                    pharetra.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="accordion">
-                        <div class="accordion-head">
-                            <span>Fourth Question Asked</span>
-                            <span class="icon">
-                                <i class="icon fa fa-chevron-right"></i>
-                            </span>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="content">
-                                <p>Phasellus eu purus ornare, eleifend orci nec, egestas nulla. Sed sed aliquet sapien.
-                                    Proin placerat, ipsum eu posuere blandit, tellus quam consectetur nisi, id
-                                    sollicitudin diam ex at nisi.
-                                    <br><br>
-                                    Aenean fermentum eget turpis egestas semper. Sed finibus mollis venenatis. Praesent
-                                    at sem in massa iaculis pharetra.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="accordion">
-                        <div class="accordion-head">
-                            <span>Fifth Ever Question</span>
-                            <span class="icon">
-                                <i class="icon fa fa-chevron-right"></i>
-                            </span>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="content">
-                                <p>Quisque aliquet ipsum ut magna rhoncus, euismod lacinia elit rhoncus. Sed sapien
-                                    elit, mollis ut ultricies quis, fermentum nec ante.
-                                    <br><br>
-                                    Sed nec ex nec tortor fermentum sollicitudin id ut ligula. Ut sagittis rutrum
-                                    lectus, non sagittis ante euismod eu.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="accordion">
-                        <div class="accordion-head">
-                            <span>Sixth Sense Question</span>
-                            <span class="icon">
-                                <i class="icon fa fa-chevron-right"></i>
-                            </span>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="content">
-                                <p>Suspendisse potenti. Ut dapibus leo ut massa vulputate semper. Pellentesque maximus
-                                    lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam
-                                    erat volutpat.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="col-md-12">
+                <table class="table" id="example">
+                    <thead>
+                        <tr>
+                         
+                            <th>ชื่อรายการ</th>
+                            <th>รหัสการแข่ง</th>
+                            <th>วันที่</th>
+                            <th>ถึงวันที่</th>
+                            <th>ผู้จัด</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+<?php
+    foreach ($dv as $key => $value) {
+       
+   
+
+?>
+                        <tr>
+                            <td scope="row"><?php echo $value->game_name; ?></td>
+                            <td><?php echo $value->game_code; ?></td>
+                           
+                            <td><?php echo $value->game_start; ?></td>
+                            <td><?php echo $value->game_end; ?></td>
+                            <td><?php echo $value->user_fullname; ?></td>
+                            <td><a href="" class="btn btn-info btn-sm">รายละเอียด</a></td>
+                        </tr>
+ <?php } ?>                       
+                    </tbody>
+
+
+                </table>
+                <script>
+               $(document).ready(function() {
+    $('#example').DataTable( {
+        responsive: true,
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+                </script>
+
             </div>
         </div>
+
     </div>
+
+
+
+
 </section>
 <!-- ***** Frequently Question End ***** -->
 
@@ -365,13 +400,27 @@
                            3. Click "Share" and choose "Embed map" tab
                            4. Copy only URL and paste it within the src="" field below
                     -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d952.2255454200009!2d102.06513622919323!3d14.988983894821843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311eb3d799c2bb89%3A0x3f510410f7a15f3e!2sDWASOFT%20Co.%2CLtd.!5e1!3m2!1sth!2sth!4v1613524157408!5m2!1sth!2sth" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>   </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d952.2255454200009!2d102.06513622919323!3d14.988983894821843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311eb3d799c2bb89%3A0x3f510410f7a15f3e!2sDWASOFT%20Co.%2CLtd.!5e1!3m2!1sth!2sth!4v1613524157408!5m2!1sth!2sth"
+                        width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
             </div>
             <!-- ***** Contact Map End ***** -->
 
             <!-- ***** Contact Form Start ***** -->
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="contact-form">
+
+                <div style="padding: 10px;">
+                    <h3>Email : xxxxx@mail.com (คุณ AAA)</h3>
+                    <h3>tex : 123456789 (คุณ AAA) </h3>
+
+                </div>
+
+
+
+
+                <!-- <div class="contact-form">
                     <form id="contact" action="" method="post">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
@@ -399,17 +448,14 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
             </div>
             <!-- ***** Contact Form End ***** -->
         </div>
     </div>
 </section>
 <!-- ***** Contact Us End ***** -->
-<a id="single_4" href="http://farm9.staticflickr.com/8140/30366640446_eb359921c5_b.jpg"
-    title="Morning on Camaret (Tony N.)">
-    <img src="http://farm9.staticflickr.com/8140/30366640446_eb359921c5_m.jpg" alt="" />
-</a>
+ 
 <script type="text/javascript">
 $(document).ready(function() {
     $("#single_1").fancybox({
@@ -453,3 +499,12 @@ $(document).ready(function() {
 
 
 <?php $this->loadLayout("role/layout/footer2");  ?>
+<!-- Theme style -->
+<script src="<?php echo BASE_URL ?>static/plugins/fullcalendar/main.js"></script>
+<!-- <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-daygrid/main.js"></script> -->
+<!-- <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-timegrid/main.min.js"></script> -->
+<script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-interaction/main.min.js"></script>
+<script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-bootstrap/main.min.js"></script>
+
+
+<script src="<?php echo BASE_URL ?>static/plugins/fullcalendar/locales/th.js"></script>

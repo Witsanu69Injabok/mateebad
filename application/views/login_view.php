@@ -41,9 +41,13 @@
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-md-12">
+                <div class="col-md-12  my-1">
                     <button type="submit" class="btn btn-primary btn-block btn-flat" style="width: 100%;">Sign
                         In</button>
+                </div>
+                <div class="col-md-12 my-1">
+                    <a href="<?php echo BASE_URL; ?>register" class="btn btn-info btn-block btn-flat"
+                        style="width: 100%;">สมัครสมาชิก</a>
                 </div>
                 <!-- /.col -->
             </div>

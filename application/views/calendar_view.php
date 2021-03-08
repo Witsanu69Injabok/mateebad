@@ -12,6 +12,8 @@
     foreach ($dv as $key => $rs) {
         $json_data[]=array(  
             "id"=>$rs->game_id,
+            "fullname"=> "9999999", // $rs->user_fullname,
+            "location"=>$rs->game_location,
             "title"=>$rs->game_name,
             "start"=>$rs->game_start ."T09:00:01",
             "end"=>$rs->game_end ."T23:59:59",           
@@ -26,9 +28,9 @@
     if(isset($_GET['callback']) && $_GET['callback']!=""){  
          echo $_GET['callback']."(".$json.");";      
         }else{  
-        //  echo $json;  
+        //    echo $json;  
         // $json_string = json_encode($json, JSON_PRETTY_PRINT);
-        // echo "<pre> " . ( $json_string) . "</pre>";
+        //  echo "<pre> " . ( $json_string) . "</pre>";
         }  
 ?>
 
@@ -36,16 +38,18 @@
     <div class="col-6">
         <h3>ปฎิทินการแข่งขัน</h3>
     </div>
-    <div class="col-6 text-right"><a href="" class="btn btn-primary"><i class="fas fa-plus-circle"> </i> เพิ่มการแข่ง</a> </div>
+    <div class="col-6 text-right"><a href="" class="btn btn-primary"><i class="fas fa-plus-circle"> </i>
+            เพิ่มการแข่ง</a> </div>
 </div>
 <hr>
 <div id='calendar'></div>
-
+<input type="hidden" name="" class="form-control" value="<?php echo BASE_URL; ?>" id="pth">
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    var pth = document.getElementById('pth').value;
     var calendarEl = document.getElementById('calendar');
-
+    var initialLocaleCode = 'th';
     var calendar = new FullCalendar.Calendar(calendarEl, {
         headerToolbar: {
             left: 'prev,next today',
@@ -53,16 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         //   initialDate: '2020-09-12',
-
+        events: <?php echo $json; ?>,
         navLinks: true, // can click day/week names to navigate views
         selectable: true,
         selectMirror: true,
         displayEventTime: false,
+
+
+
         select: function(arg) {
-            alert(arg.start);
+
             var title = prompt('Event Title:');
             if (title) {
+
                 calendar.addEvent({
+                    id: arg.id,
+                    fullname: arg.fullname,
+                    location: arg.location,
                     title: arg.title,
                     start: arg.start,
                     end: arg.end,
@@ -84,34 +95,28 @@ document.addEventListener('DOMContentLoaded', function() {
         editable: true,
         dayMaxEvents: true, // allow "more" link when too many events
         timezone: 'Asia/Bangkok',
-      //  nextDayThreshold: '00:00:01',
-      //  displayEventEnd: true,
-
-
-        events: <?php echo $json; ?>,
-
-
+        //  nextDayThreshold: '00:00:01',
+        //  displayEventEnd: true,
+        locale: initialLocaleCode,
+        //weekNumbers: true,
 
         eventLimit: true,
-        lang: 'th',
-
         header: {
             left: '',
             center: 'prev title next',
             right: ''
         },
-        eventClick: function(arg, jsEvent, view) {
-            //alert("->" + arg.event.start + " \n->" + arg.event.end);
-            var id = arg.event.id;
-            $('#modalTitle').html(arg.event.title);
-            $('#modalBody').html(arg.event.title + "<br> Start : " + arg.event.start.toISOString()
-                .slice(0, 10));
-            $('#ModalStart').html(arg.event.start.toISOString().slice(0, 10));
-            $('#ModalEnd').html(arg.event.end.toISOString().slice(0, 10));
-            $('#eventUrl').attr('href', arg.event.id);
-            $('#fullCalModal').modal();
+        eventClick: function(arg) {
+            var p = "";
+            if (arg.event.id) {
+                $.fancybox({
+                    'href': pth + "games/popupdetail/" + arg.event.id + "/2",
+                    'type': 'iframe',
+                    //  other options as you like...
+                });
+                return false;
+            }
         }
-
 
     });
 
@@ -155,7 +160,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4">ผู้จัด</div>
-                    <div class="col-md-8"></div>
+                    <div class="col-md-8">
+                        <div id="eventUrl"></div>
+
+                    </div>
 
                     <div class="col-md-4">สถานที่แข่ง</div>
                     <div class="col-md-8"></div>
@@ -176,7 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a></button>
             </div>
         </div>
     </div>
@@ -188,8 +197,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <?php $this->loadLayout("role/layout/footer");  ?>
 <!-- Theme style -->
 <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar/main.js"></script>
-<script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-daygrid/main.js"></script>
-<script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-timegrid/main.min.js"></script>
+<!-- <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-daygrid/main.js"></script> -->
+<!-- <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-timegrid/main.min.js"></script> -->
 <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-interaction/main.min.js"></script>
 <script src="<?php echo BASE_URL ?>static/plugins/fullcalendar-bootstrap/main.min.js"></script>
 

@@ -42,7 +42,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                             </div>
-                            <input name="user_name" class="form-control" placeholder="ชื่อเข้าระบบ" type="text"
+                            <input name="user_name" autocomplete="off" class="form-control" placeholder="ชื่อเข้าระบบ" type="text"
                                 value="<?php echo @$user_name; ?>">
                         </div> <!-- form-group// -->
 
