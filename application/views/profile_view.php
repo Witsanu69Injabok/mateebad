@@ -4,7 +4,7 @@
 $tmp_code = intval($_SESSION["user_id"])  ;
 $tmp_code = str_pad($tmp_code, 5, "0", STR_PAD_LEFT);
 ?>
-                    <?php
+<?php
 foreach ($dt as $key => $value) {
    $x_user_id = $value->user_id;
    $x_user_fullname = $value->user_fullname;
@@ -29,59 +29,59 @@ foreach ($dt as $key => $value) {
 
 
 
-<div class="col-md-12">
-            <!-- Widget: user widget style 1 -->
-            <div class="card card-widget widget-user">
-              <!-- Add the bg color to the header using any of the bg-* classes -->
-              <div class="widget-user-header bg-info">
+    <div class="col-md-12">
+        <!-- Widget: user widget style 1 -->
+        <div class="card card-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-info">
                 <h3 class="widget-user-username"><?php echo $x_user_fullname; ?></h3>
                 <h5 class="widget-user-desc"> <?php echo $x_user_nickname; ?> </h5>
-              </div>
-              <div class="widget-user-image">
+            </div>
+            <div class="widget-user-image">
                 <!-- <img class="img-circle elevation-4" src="<?php echo BASE_URL; ?>static/uploads/<?php echo $x_user_img; ?>" alt="User Avatar"> -->
-              </div>
-              <div class="card-footer">
+            </div>
+            <div class="card-footer">
                 <div class="row">
-                  <div class="col-sm-3 border-right">
-                    <div class="description-block">
-                      <h5 class="description-header">3,200</h5>
-                      <span class="description-text"> การแข่งขัน</span>
+                    <div class="col-sm-3 border-right">
+                        <div class="description-block">
+                            <h5 class="description-header">3,200</h5>
+                            <span class="description-text"> การแข่งขัน</span>
+                        </div>
+                        <!-- /.description-block -->
                     </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 border-right">
-                    <div class="description-block">
-                      <h5 class="description-header">77</h5>
-                      <span class="description-text">ชนะ</span>
+                    <!-- /.col -->
+                    <div class="col-sm-3 border-right">
+                        <div class="description-block">
+                            <h5 class="description-header">77</h5>
+                            <span class="description-text">ชนะ</span>
+                        </div>
+                        <!-- /.description-block -->
                     </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3  border-right">
-                    <div class="description-block">
-                      <h5 class="description-header">88</h5>
-                      <span class="description-text">แพ้</span>
+                    <!-- /.col -->
+                    <div class="col-sm-3  border-right">
+                        <div class="description-block">
+                            <h5 class="description-header">88</h5>
+                            <span class="description-text">แพ้</span>
+                        </div>
+                        <!-- /.description-block -->
                     </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3">
-                    <div class="description-block">
-                      <h5 class="description-header">99</h5>
-                      <span class="description-text">เสมอ</span>
+                    <!-- /.col -->
+                    <div class="col-sm-3">
+                        <div class="description-block">
+                            <h5 class="description-header">99</h5>
+                            <span class="description-text">เสมอ</span>
+                        </div>
+                        <!-- /.description-block -->
                     </div>
-                    <!-- /.description-block -->
-                  </div>
 
 
 
                 </div>
                 <!-- /.row -->
-              </div>
             </div>
-            <!-- /.widget-user -->
-          </div>
+        </div>
+        <!-- /.widget-user -->
+    </div>
 
 
 
@@ -104,7 +104,7 @@ foreach ($dt as $key => $value) {
                     <h4>User profile </h4>
 
                     <!-- <p class="text-center">กรุณากรอกรายละเอียดเพื่อสร้างบัญชีผู้ใช้</p> -->
-                   
+
                     <style>
                     .required:after {
                         content: " *";
@@ -136,6 +136,9 @@ foreach ($dt as $key => $value) {
                                         <a href="<?php echo BASE_URL; ?>imgUpload/uploadfrm/<?php echo $x_user_id; ?>"
                                             id='pop6060' class="btn btn-primary btn-pill btn-sm ">เปลี่ยนภาพ</a>
 
+
+                                        <a href="<?php echo BASE_URL; ?>webcam/frm" id='pop6060'
+                                            class="btn btn-info btn-sm"> ถ่ายภาพ</a>
                                     </div>
                                 </div>
                             </div>
@@ -147,8 +150,10 @@ foreach ($dt as $key => $value) {
                             <div class="card my-2">
                                 <div class="card-header text-center">User Detail </div>
                                 <div class="card-body">
-                                    <form method="POST" action = "<?php echo BASE_URL ?>lvUser/profile_update" onSubmit="return checkPassword(this)">
-                                    <input type="hidden" name="user_id" id="user_id" value="<?php echo $x_user_id; ?>">
+                                    <form method="POST" action="<?php echo BASE_URL ?>lvUser/profile_update"
+                                        onSubmit="return checkPassword(this)">
+                                        <input type="hidden" name="user_id" id="user_id"
+                                            value="<?php echo $x_user_id; ?>">
                                         <div class="row form-group">
 
                                             <div class="col-md-12">
@@ -185,19 +190,19 @@ foreach ($dt as $key => $value) {
 
 
 
-                                                    <script type="text/javascript">
-                    $.datetimepicker.setLocale('th');
+                                                <script type="text/javascript">
+                                                $.datetimepicker.setLocale('th');
 
-                    $('#user_birth').datetimepicker({
-                        // yearOffset: 543,
-                        lang: 'th',
-                        timepicker: false,
-                        format: 'Y-m-d',
-                        formatDate: 'Y-m-d'
-                        // minDate: '-1970/01/02', // yesterday is minimum date
-                        //  maxDate: '+1970/01/02' // and tommorow is maximum date calendar
-                    });
-                    </script>
+                                                $('#user_birth').datetimepicker({
+                                                    // yearOffset: 543,
+                                                    lang: 'th',
+                                                    timepicker: false,
+                                                    format: 'Y-m-d',
+                                                    formatDate: 'Y-m-d'
+                                                    // minDate: '-1970/01/02', // yesterday is minimum date
+                                                    //  maxDate: '+1970/01/02' // and tommorow is maximum date calendar
+                                                });
+                                                </script>
 
 
 
@@ -206,7 +211,8 @@ foreach ($dt as $key => $value) {
                                                 <label>เพศ </label>
                                                 <!-- <input type="text" class="form-control" name="user_sex" id="user_sex"> -->
                                                 <div>
-                                                    <input type="radio" <?php if ($x_user_sex == 1  or  $x_user_sex == ''){ echo "checked";} ?>
+                                                    <input type="radio"
+                                                        <?php if ($x_user_sex == 1  or  $x_user_sex == ''){ echo "checked";} ?>
                                                         name="user_sex" id="user_sex" value="1"> ชาย
 
 
@@ -225,29 +231,27 @@ foreach ($dt as $key => $value) {
                                             <div class="col-md-6">
                                                 <label>อีเมล์ </label>
                                                 <input type="email" class="form-control" name="user_email"
-                                                   value="<?php echo $x_user_email; ?>" id="user_email">
+                                                    value="<?php echo $x_user_email; ?>" id="user_email">
                                             </div>
                                             <div class="col-md-6">
                                                 <label>เบอร์โทร </label>
-                                                <input type="text" class="form-control" 
-                                                value="<?php echo $x_user_tel; ?>"
-                                                name="user_tel" id="user_tel">
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo $x_user_tel; ?>" name="user_tel" id="user_tel">
                                             </div>
 
 
                                             <div class="col-md-12">
                                                 <label>ประวัติการแข่งขัน </label>
-                                                <input type="text" class="form-control" 
-                                                
-                                                value="<?php echo $x_user_comment; ?>"
-                                                name="user_comment" id="user_comment">
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo $x_user_comment; ?>" name="user_comment"
+                                                    id="user_comment">
                                             </div>
 
                                         </div>
 
 
 
-                                        
+
                                         <br>
                                         <br>
                                         <p class="text-center">
@@ -262,14 +266,6 @@ foreach ($dt as $key => $value) {
                         </div>
 
                     </div>
-
-
-
-
-
-
-
-
 
                 </div>
 

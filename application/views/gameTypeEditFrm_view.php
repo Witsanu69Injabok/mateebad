@@ -73,12 +73,12 @@ if ($x_gt_type == 1){
 
                 <div class=" col-md-3">
                     <label for="">จำนวนที่รับ</label>
-                    <input type="text" name="qt_total_apply" id="qt_total_apply"
-                        value="<?php echo $value->qt_total_apply; ?>" class="form-control">
+                    <input type="text" name="gt_total_apply" id="gt_total_apply"
+                        value="<?php echo $value->gt_total_apply; ?>" class="form-control">
                 </div>
                 <div class=" col-md-12">
                     <label for="">หมายเหตุ</label>
-                    <input type="text" name="qt_description" id="qt_description" value="<?php echo $value->qt_description; ?>"
+                    <input type="text" name="gt_description" id="gt_description" value="<?php echo $value->gt_description; ?>"
                         class="form-control">
                 </div>
             </div>

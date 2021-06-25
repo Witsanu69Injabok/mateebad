@@ -255,8 +255,8 @@
             $gt_type = @$_POST['gt_type']; 
             $gt_hand_name = @$_POST['gt_hand_name']; 
             $gt_pay = @$_POST['gt_pay']; 
-            $qt_total_apply = @$_POST['qt_total_apply']; 
-            $qt_description = @$_POST['qt_description']; 
+            $gt_total_apply = @$_POST['gt_total_apply']; 
+            $gt_description = @$_POST['gt_description']; 
             $rank1 = @$_POST['rank1']; 
             $rank2 = @$_POST['rank2']; 
             $rank3 = @$_POST['rank3']; 
@@ -272,8 +272,8 @@
                                                 gt_type,
                                                 gt_hand_name,
                                                 gt_pay,
-                                                qt_total_apply,
-                                                qt_description,
+                                                gt_total_apply,
+                                                gt_description,
                                                 rank1,
                                                 rank2,
                                                 rank3,
@@ -288,8 +288,8 @@
                                                 '$gt_type',
                                                 '$gt_hand_name',
                                                 '$gt_pay',
-                                                '$qt_total_apply',
-                                                '$qt_description',
+                                                '$gt_total_apply',
+                                                '$gt_description',
                                                 '$rank1',
                                                 '$rank2',
                                                 '$rank3',
@@ -312,8 +312,8 @@
             $gt_type = @$_POST['gt_type']; 
             $gt_hand_name = @$_POST['gt_hand_name']; 
             $gt_pay = @$_POST['gt_pay']; 
-            $qt_total_apply = @$_POST['qt_total_apply']; 
-            $qt_description = @$_POST['qt_description']; 
+            $gt_total_apply = @$_POST['gt_total_apply']; 
+            $gt_description = @$_POST['gt_description']; 
             $rank1 = @$_POST['rank1']; 
             $rank2 = @$_POST['rank2']; 
             $rank3 = @$_POST['rank3']; 
@@ -330,8 +330,8 @@
                                              gt_type='$gt_type',
                                              gt_hand_name= '$gt_hand_name',
                                              gt_pay= '$gt_pay',
-                                             qt_total_apply=  '$qt_total_apply',
-                                             qt_description= '$qt_description',
+                                             gt_total_apply=  '$gt_total_apply',
+                                             gt_description= '$gt_description',
                                              rank1=  '$rank1',
                                              rank2= '$rank2',
                                              rank3=  '$rank3',
@@ -340,10 +340,8 @@
                                              rank_description=   '$rank_description',                                       
                                              update_user_id=  '$update_user_id',
                                              update_date=  '$update_date'
-WHERE gt_id = $game_id
-
-                                       ";
-                                       echo $sql;
+                    WHERE gt_id = $game_id  ";
+                echo $sql;
                       $res = $this->execute($sql);
                       return ($res);
           
@@ -403,6 +401,113 @@ WHERE gt_id = $game_id
               return ($res);
 
         }
+
+/////////////////////////////////////////////////////////////////////////
+/// game register by player
+
+
+
+        function player1Regis(){
+            $game_id = $_POST["game_id"];
+            $gt_id = $_POST["gt_id"];
+            $user_id = $_POST["user_id"];
+            $create_date =  date("Y-m-d h:i:s");
+            $create_user_id = $_SESSION["user_id"];
+            $xTable="tbl_player1";
+            $xField = "game_id,gt_id,player,user_id,create_user_id,create_date";
+            $xValue = "'$game_id','$gt_id','1','$user_id','$create_user_id','$create_date'";
+            $sql = " INSERT INTO $xTable ($xField) VALUES ($xValue) ";
+            $res = $this->execute($sql);
+            return ($res);
+        }
+
+        function player2Regis(){
+            $team_code = $this->genTeamCode();
+            $team_name = $_POST["team_name"];
+            $game_id = $_POST["game_id"];
+            $gt_id = $_POST["gt_id"];
+            $user_id1 = $_POST["user_id"];
+            $user_id2 = $_POST["user_id1"];
+            $create_date =  date("Y-m-d h:i:s");
+            $create_user_id = $_SESSION["user_id"];
+
+            $xTable="tbl_player2";
+            $xField = "game_id,gt_id, team_code ,  team_name, player,user_id1,user_id2,create_user_id,create_date";
+
+            $xValue = "'$game_id','$gt_id','$team_code' ,'$team_name','2','$user_id1' ,'$user_id2','$create_user_id','$create_date'";
+            $sql = " INSERT INTO $xTable ($xField) VALUES ($xValue) ";          
+            $res = $this->execute($sql);
+
+            
+
+            return ($res);
+        }
+
+
+        function genTeamCode(){
+            $last_code = "";
+            $new_code = "";
+            $prefix_code = "";
+            $prefix_year = date("y");
+
+            $sql = " SELECT team_code FROM tbl_player2 ORDER BY gr_id DESC Limit 0,1 ";
+            $chk = $this->query($sql);
+            foreach ($chk as $key => $value) {
+                $last_code = $value->team_code;
+            }
+            $tmp_code = intval($last_code) +1 ;
+            $tmp_code = str_pad($tmp_code, 5, "0", STR_PAD_LEFT);
+            $new_code = $prefix_code . $prefix_year ."-". $tmp_code;
+
+            return ($new_code);
+        }
+
+        function gameApplyList($id){
+            $sql = "SELECT
+                    tbl_games_type.gt_id,
+                    tbl_games_type.game_id,
+                    tbl_games.game_name,
+                    tbl_games_type.gt_type,
+                    tbl_games_type.gt_hand_name,
+                    tbl_games_type.gt_pay,
+                    tbl_games_type.gt_total_apply,
+                    tbl_games_type.gt_description,
+                    ( SELECT count( gr_id ) FROM tbl_player2 WHERE gt_id = tbl_games_type.gt_id ) AS total_apply,
+                    ( SELECT count( gr_id ) FROM tbl_player2 WHERE gt_id = tbl_games_type.gt_id AND IsPay = 1 ) AS total_pay,
+                    tbl_games_type.IsActive,
+                    tbl_games_type.IsDelete 
+                    FROM
+                        tbl_games_type
+                        INNER JOIN tbl_games ON tbl_games_type.game_id = tbl_games.game_id 
+                    WHERE
+                    tbl_games_type.game_id = $id;";
+            $res = $this->query($sql);
+            return ($res);
+        }
+
+        function gameApplyDetail($id){
+            $sql = "SELECT
+                    tbl_games_type.gt_id,
+                    tbl_games_type.game_id,
+                    tbl_games.game_name,
+                    tbl_games_type.gt_type,
+                    tbl_games_type.gt_hand_name,
+                    tbl_games_type.gt_pay,
+                    tbl_games_type.gt_total_apply,
+                    tbl_games_type.gt_description,
+                    ( SELECT count( gr_id ) FROM tbl_player2 WHERE gt_id = tbl_games_type.gt_id ) AS total_apply,
+                    ( SELECT count( gr_id ) FROM tbl_player2 WHERE gt_id = tbl_games_type.gt_id AND IsPay = 1 ) AS total_pay,
+                    tbl_games_type.IsActive,
+                    tbl_games_type.IsDelete 
+                    FROM
+                        tbl_games_type
+                        INNER JOIN tbl_games ON tbl_games_type.game_id = tbl_games.game_id 
+                    WHERE
+                    tbl_games_type.gt_id = $id;";
+            $res = $this->query($sql);
+            return ($res);
+        }
+
 
 
 

@@ -1,6 +1,6 @@
 <?php $this->loadLayout("role/layout/header_blank");  ?>
 
-<form action="" method="post">
+<form action="<?php echo BASE_URL ?>games/gameRegis1PlayerAct" method="post">
     <input type="hidden" name="game_id" id="game_id" value="<?php echo $gid ?>">
     <input type="hidden" name="gt_id" id="gt_id" value="<?php echo $gtid ?>">
     <div class="card">
@@ -18,7 +18,7 @@
         </div>
         <div class="card-footer">
             <p class="text-center">
-                <input type="submit" value="บันทึก" class="btn btn-primary">
+                <input type="submit" value="ยืนยันการเข้าร่วมการแข่งขัน" class="btn btn-primary">
 
             </p>
 

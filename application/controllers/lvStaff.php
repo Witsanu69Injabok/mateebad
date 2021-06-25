@@ -12,7 +12,7 @@ class lvStaff extends Controller {
         $dt = $this->loadModel("users_model");
         $dt_user = $dt->search_username($user_name);
 
-        $template = $this->loadView('staff_view');
+        $template = $this->loadView('LvStaff_view');
         $template->set('dv',$dv);
         $template->set("dt",$dt_user);
         $template->render();

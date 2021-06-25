@@ -61,11 +61,11 @@
 
                 <div class=" col-md-3">
                     <label for="">จำนวนที่รับ</label>
-                    <input type="text" name="qt_total_apply" id="qt_total_apply" value="0" class="form-control">
+                    <input type="text" name="gt_total_apply" id="gt_total_apply" value="0" class="form-control">
                 </div>
                 <div class=" col-md-12">
                     <label for="">หมายเหตุ</label>
-                    <input type="text" name="qt_description" id="qt_description" class="form-control">
+                    <input type="text" name="gt_description" id="gt_description" class="form-control">
                 </div>
             </div>
             <hr>
@@ -139,8 +139,8 @@
                 <td scope="row"><?php echo $x_gt_type; ?> </td>
                 <td><?php echo $value->gt_hand_name; ?></td>
                 <td><?php echo $value->gt_pay; ?></td>
-                <td><?php echo $value->qt_total_apply; ?></td>
-                <td><?php echo  $value->qt_description;?></td>
+                <td><?php echo $value->gt_total_apply; ?></td>
+                <td><?php echo  $value->gt_description;?></td>
 
                 <td style="text-align: right;"><?php echo   $value->rank1 ; ?></td>
                 <td style="text-align: right;"><?php echo $value->rank2 ; ?></td>

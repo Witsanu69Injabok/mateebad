@@ -2,7 +2,7 @@
 
 <div class="card-primary">
 
-    <div class="card-header">ข้อมูล</div>
+    <div class="card-header">ข้อมูลนักกีฬา</div>
     <div class="card-body">
 
         <table class="table table-hover table-striped" id="dt">

@@ -41,7 +41,12 @@ class users_model extends Model {
     } // end function
 
 
-
+    function listAll( ){
+  
+        $sql = " SELECT * FROM tbl_users WHERE IsActive = 1 AND IsDelete = 0 AND level_id > 0 ";   
+        $res = $this->query($sql);
+        return $res;
+    } // end function
 
 }
 

@@ -16,7 +16,7 @@
         <a class="nav-link  border-right " href="<?php echo BASE_URL; ?>games/gameTypeFrm/<?php echo $_SESSION["game_id"]; ?>">ประเภทการแข่งขัน</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link  border-right  " href="#">ข้อมูลผู้สมัคร</a>
+        <a class="nav-link  border-right  " href="<?php echo BASE_URL; ?>games/gameApplyList/<?php echo $_SESSION["game_id"]; ?>">ข้อมูลผู้สมัคร</a>
       </li>
       <li class="nav-item">
         <a class="nav-link  border-right  " href="<?php echo BASE_URL; ?>games/gameStaffFrm/<?php echo $_SESSION["game_id"]; ?>">ข้อมูลผู้ดูแลการแข่งขัน</a>

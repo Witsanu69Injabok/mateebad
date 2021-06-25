@@ -19,6 +19,15 @@
         }
 
 
+        function UserAllPopUp($ElementId){
+
+            $dt = $this->loadModel('users_model');
+            $dv=$dt->ListAll() ;
+            $tp = $this->loadView('popupUser_view');            
+            $tp->set('dv',$dv);
+            $tp->set('emId',$ElementId);
+            $tp->render();
+        }
 
 
 

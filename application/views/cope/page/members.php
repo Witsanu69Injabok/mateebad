@@ -1,4 +1,6 @@
  <?php
+  Xcrud_config::$editor_url = dirname($_SERVER["SCRIPT_NAME"]). BASE_URL.'static/ckeditor/ckeditor.js'; // can be set in config
+  $xcrud = Xcrud::get_instance();
 $xcrud->table('tbl_users');
 $xcrud->table_name('นักกีฬา ');
 $xcrud->unset_view();

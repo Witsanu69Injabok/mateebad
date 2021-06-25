@@ -195,8 +195,8 @@ $_SESSION["game_code"] = $game_code;
                                 <td scope="row"><?php echo $x_gt_type; ?> </td>
                                 <td><?php echo $value->gt_hand_name; ?></td>
                                 <td><?php echo $value->gt_pay; ?></td>
-                                <td><?php echo $value->qt_total_apply; ?></td>
-                                <td><?php echo  $value->qt_description;?></td>
+                                <td><?php echo $value->gt_total_apply; ?></td>
+                                <td><?php echo  $value->gt_description;?></td>
 
                                 <td><?php echo $value->rank1; ?></td>
                                 <td><?php echo $value->rank2; ?></td>

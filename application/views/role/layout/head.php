@@ -97,7 +97,7 @@
             height: 600,
             'padding': 0,
             closeBtn: true,
-            'autoScale': true,
+            // 'autoScale': true,
             'transitionIn': 'none',
             'transitionOut': 'none',
 
@@ -112,8 +112,8 @@
             maxWidth: 600,
             maxHeight: 600,
             fitToView: false,
-            width: '70%',
-            height: '70%',
+            width: '100%',
+            height: '100%',
             'padding': 0,
             closeBtn: true,
             'autoScale': true,
@@ -178,7 +178,7 @@
             height: '98%',
             'padding': 0,
             closeBtn: true,
-            'autoScale': true,
+            'autoScale': false,
             'transitionIn': 'none',
             'transitionOut': 'none',
 
@@ -373,7 +373,7 @@
                         </li>
                         <!-- -------------------------------------------------------------------------------------------------------------- -->
                         <?php if(@$_SESSION['user_level']  == -1 or @$_SESSION['user_level']  == 1) { ?>
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview   menu-open">
                             <?php if ($_SESSION["user_level"] < 3) { ?>
                             <a href="#" class="nav-link">
                                 <i class="fas fa-user-cog"></i>
@@ -388,18 +388,18 @@
                             <?php } ?>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item" style="padding-left:10px;">
-                                    <a href="<?php echo BASE_URL; ?>admin/index/members" class="nav-link">
+                                    <a href="<?php echo BASE_URL; ?>admin/index/users" class="nav-link">
                                         <i class="fas fa-file-import"></i>
-                                        <p>นักกีฬา</p>
+                                        <p>สมาชิก</p>
                                     </a>
                                 </li>
 
-                                <li class="nav-item" style="padding-left:10px;">
+                                <!-- <li class="nav-item" style="padding-left:10px;">
                                     <a href="<?php echo BASE_URL; ?>admin/index/staffs" class="nav-link">
                                         <i class="fas fa-file-import"></i>
                                         <p>ผู้จัด</p>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item" style="padding-left:10px;">
                                     <a href="<?php echo BASE_URL; ?>admin/index/games" class="nav-link">
                                         <i class="fas fa-chalkboard-teacher"></i>
@@ -407,11 +407,19 @@
                                     </a>
                                 </li>
                                 <li class="nav-item" style="padding-left:10px;">
-                                    <a href="<?php echo BASE_URL; ?>admin/index/cardsvalue" class="nav-link">
+                                    <a href="<?php echo BASE_URL; ?>admin/index/player1" class="nav-link">
                                         <i class="fas fa-file-import"></i>
-                                        <p>ประเภทมือ</p>
+                                        <p>นักกีฬา(เดี่ยว)</p>
                                     </a>
                                 </li>
+
+                                <li class="nav-item" style="padding-left:10px;">
+                                    <a href="<?php echo BASE_URL; ?>admin/index/player2" class="nav-link">
+                                        <i class="fas fa-file-import"></i>
+                                        <p>นักกีฬา(ทีม)</p>
+                                    </a>
+                                </li>
+
                                 <!-- <li class="nav-item" style="padding-left:10px;">
                                     <a href="<?php echo BASE_URL; ?>admin/index/percent" class="nav-link">
                                         <i class="fas fa-file-import"></i>
@@ -445,7 +453,7 @@
 
                         <li class="nav-item has-treeview  menu-open">
                             <a href="#" class="nav-link <?php echo $tmp_active; ?>">
-                                <i class="fas fa-store-alt"></i>
+                            <i class="fas fa-running"></i>
                                 <p>
                                     นักกีฬา
                                     <i class="fas fa-angle-left right"></i>
@@ -455,7 +463,7 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item" style="padding-left:10px;">
                                     <a href="<?php echo BASE_URL; ?>lvUser/profile" class="nav-link">
-                                        <i class="fas fa-file-import"></i>
+                                        <i class="fas fa-id-card"></i>
                                         <p>ประวัติ</p>
                                     </a>
                                 </li>
@@ -474,7 +482,7 @@
                         ?>
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link <?php echo $tmp_active; ?>">
-                                <i class="fas fa-store-alt"></i>
+                                <i class="fas fa-user-tie"></i>
                                 <p>
                                     ผู้จัดการแข่งขัน
                                     <i class="fas fa-angle-left right"></i>
@@ -491,7 +499,7 @@
 
                                 <li class="nav-item" style="padding-left:10px;">
                                     <a href="<?php echo BASE_URL; ?>lvUser/profile" class="nav-link">
-                                        <i class="fas fa-file-import"></i>
+                                        <i class="fas fa-id-card"></i>
                                         <p>ประวัติ</p>
                                     </a>
                                 </li>

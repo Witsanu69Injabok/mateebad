@@ -9,17 +9,18 @@
             $tp->render();
         }
 
+// ---------------------------------------------------------------
 
-        function addFrm() {
+        function CreateFrm() {
 
             $dt = $this->loadModel('games_model');
             $dv = $dt->gamecode();
-            $tp=$this->loadView('gamenew_view');
+            $tp=$this->loadView('GameCreate_view');
             $tp->set('gamecode',$dv);
             $tp->render();
         }
 
-        function addAct() {
+        function CreateAct() {
             $dt = $this->loadModel('games_model');
             $dv = $dt->gamecode();
             $game_code = $dv; 
@@ -29,6 +30,7 @@
             $tp->render();
         }
 
+// ---------------------------------------------------------------
  
         function detail($id,$ptype) {
             $dt = $this->loadModel('games_model');
@@ -53,18 +55,15 @@
             $tp->render();
         }
 
-
+// ---------------------------------------------------------------
 
 
         function editFrm($id) {
             $dt = $this->loadModel('games_model');
             $dv = $dt->detail($id);
-
             $tp=$this->loadView('gameedit_view');
             $tp->set('dv',$dv);
             $tp->render();
-
-
         }
 
         function editAct() {
@@ -74,6 +73,7 @@
             $tp=$this->loadView('');
             $tp->redirect('games/detail/'.$id ."/2");
         }
+ // ---------------------------------------------------------------
 
 
         function imgFrm($id){
@@ -148,8 +148,8 @@
         }
 
 
-//-----------------------------------------------------------------
-//-------------- GameType ---------------------------------------------------
+    //-----------------------------------------------------------------
+    //-------------- GameType ---------------------------------------------------
 
             function gameTypeFrm($id){
                 $dt = $this->loadModel('games_model');
@@ -189,9 +189,6 @@
             }
 
 
-
-
-
 //----------------------------------------------
            function gameUserView($id){
                 $dt = $this->loadModel('games_model');
@@ -203,24 +200,45 @@
                 $tp->render();
             }
 // -----------------------------------------------------------------
-            function gameRegis1PlayerFRM($gid,$gtid){ 
-                 
+  // game register by player
+
+            function gameRegis1PlayerFRM($gid,$gtid){                  
                 $tp = $this->loadView('gameRegis1Player_view');
                 $tp->set('gid',$gid);
                 $tp->set('gtid',$gtid);
                 $tp->render();
-            }
+            }            
+
+             function gameRegis1PlayerAct() {
+                 $dt = $this->loadModel('games_model');   
+                 $dt->player1Regis();   
+                 $template = $this->loadView("closepopup_view");
+                 $template->render(); 
+             }        
 
 
-            
 
-            function gameRegis2PlayerFRM($gid,$gtid){ 
-                 
+            function gameRegis2PlayerFRM($gid,$gtid){                  
                 $tp = $this->loadView('gameRegis2Player_view');
                 $tp->set('gid',$gid);
                 $tp->set('gtid',$gtid);
                 $tp->render();
             }
+            function gameRegis2PlayerAct() {
+                $id = $_POST["game_id"];
+                $dt = $this->loadModel('games_model');   
+                $dt->player2Regis();   
+
+                // $dv = $dt->Detail($id);
+                $tp = $this->loadView('gameDetailUser_view');
+                // $tp->set('dv',$dv);
+                // $tp->set('gid',$id);
+                // $tp->render(); 
+
+                $tp->redirect('games/gameUserView/'.$id.'/2');
+
+            }   
+
 //----------------------------------------------
 
             function gameStaffFrm($id){                   
@@ -240,6 +258,18 @@
                 $tp = $this->loadView('');
                 $tp->redirect('games/gameStaffFrm/'.$id);
              }
+             ///////////////////////////////////
+             // แสดงรายการ การแข่งขัน + จำนวนผู้เข้าแข่ง
+            function gameApplyList($id){
+
+               $dt = $this->loadModel('games_model'); 
+               $dv = $dt->gameApplyList($id);
+               $tp = $this->loadView('gameApplyList_view');
+               $tp->set('id',$id);
+               $tp->set('dv',$dv);
+               $tp->render();
+
+            }         
 
 
 
